@@ -86,6 +86,48 @@ body {
     rgba(240, 46, 170, 0.1) 20px 20px, rgba(240, 46, 170, 0.05) 25px 25px;
 }
 
+.section-title {
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    margin: 10rem auto 5rem auto;
+    position: relative;
+    width: max-content;
+}
+
+.section-title-main {
+    background: var(--secondary);
+    color: var(--White);
+    padding: 0.4rem;
+    border-top-left-radius: 1rem;
+    display: inline;
+}
+
+.section-title-sub {
+    color: var(--textColor);
+}
+
+.section-title-main::after {
+    content: '';
+    height: 1.2rem;
+    width: 1.2rem;
+    position: absolute;
+    bottom: -1.5rem;
+    right: 1.5rem;
+    background:var(--secondary);
+    border-bottom-right-radius: 0.5rem;
+    animation: 1s ease-in-out alternate-reverse squareShadow;
+}
+
+@keyframes squareShadow {
+    from {
+        box-shadow: var(--shadowAnimationStart);
+    }
+    to {
+        box-shadow: var(--shadowAnimationStart);
+    }
+}
+
 header {
     display: flex;
     justify-content: space-between;
@@ -341,5 +383,99 @@ header {
         font-size: 3rem;
         padding-left: 3rem;
         margin-bottom: 3rem;
+    }
+}
+
+/*projects*/
+
+.projects-content {
+    display: grid;
+    margin: 3rem 0rem 4rem 0rem;
+    align-items: center;
+}
+
+.project-content-card {
+    margin: 5rem auto;
+    width: 85%;
+    box-shadow: var(--shadow);
+    padding: 1rem;
+}
+
+.project-content-card img {
+    width: 70%;
+    display: block;
+    margin: 0 auto;
+}
+
+.project-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 0.5rem;
+}
+
+.project-name {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--textColor);
+    padding-right: 3rem;
+    border-bottom: 2px solid var(--textColor);
+}
+
+.project-link {
+    width: 1.6rem;
+    height: 1.6rem;
+    margin: 0.3rem;
+}
+
+.project-description {
+    font-size: 1.2rem;
+    padding: 0.4rem;
+    text-align: justify;
+    color: var(--textLightColor);
+}
+
+.technologies-title {
+    padding: 0.4rem;
+    border-bottom: 2px solid var(--textColor);
+    width: max-content;
+    margin-left: 0.5rem;
+    font-size: 0.8rem;
+    font-weight: bold;
+    color: var(--textColor);
+    padding-right: 5rem;
+}
+
+.technologies-icons {
+    display: flex;
+}
+
+.technologies-icons img {
+    height: 2.2rem;
+    width: 2.2rem;
+    margin: 0.8rem;
+}
+
+@media only screen and (min-width: 1000px) {
+    .projects-content {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .project-name {
+        font-size: 2rem;
+    }
+
+    .technologies-title {
+        font-size: 1rem;
+    }
+}
+
+@media only screen and (min-width: 1400px) {
+    .project-content-card {
+        width: 75%;
+    }
+    .projects {
+        width: 90%;
+        margin: 0 auto;
     }
 }
