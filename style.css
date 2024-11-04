@@ -187,13 +187,9 @@ header {
         transform: translateX(0);
     }
 
-    .menu-link {
-        position: relative;
-    }
-
     .menu-link::after {
         content: '';
-        width: 100%;
+        width: 0%;
         height: 0.2rem;
         background: var(--main);
         position: absolute;
@@ -216,5 +212,134 @@ header {
 
     .menu-link:last-child::after{
         display: none;
+    }
+}
+
+.home {
+    margin-top: 4rem;
+}
+
+.home-image {
+    width: 75%;
+    margin: 0 auto;
+    display: block;
+}
+
+.home-content {
+    font-size: 2.3rem;
+    text-align: center;
+    color: var(--textColor);
+}
+
+.home-content span {
+    font-size: 1.8rem;
+    display: block;
+}
+
+.home-icons {
+    background: var(--main);
+    width: max-content;
+    margin: 1rem auto;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    display: flex;
+    gap: 2rem;
+}
+
+.scroll-down-button {
+    width: 2rem;
+    height: 5rem;
+    margin: 2rem auto;
+    display: block;
+    border-radius: 1rem;
+    border: .2rem solid #7d62f2;
+    background: none;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.scroll-down-circle {
+    height: 1rem;
+    width: 1rem;
+    background: var(--main);
+    border-radius: 50%;
+    animation: circleJump 1s infinite alternate-reverse;
+}
+
+@keyframes circleJump {
+    from {
+        transform: translateY(0%);
+    }
+
+    to {
+        transform: translateY(-100%);
+    }
+}
+
+@media only screen and (min-width: 1000px) {
+    .home-image {
+        width: 50%;
+    }
+
+    .scroll-down-button {
+        display: none;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .home {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 90%;
+        margin: 8rem auto;
+    }
+
+    .home-image {
+        order: 2;
+    }
+}
+
+@media only screen and (min-width: 1400px) {
+    .home-content h1 {
+        font-size: 3.5rem;
+    }
+
+    .home-content span {
+        font-size: 2.3rem;
+    }
+
+    .home-image {
+        width: 55%;
+        padding: 1rem;
+    } 
+
+    .home-content h1 {
+        width: max-content;
+    }
+}
+
+@media only screen and (min-width: 1650px) {
+    .home-content {
+        font-size: 2.2rem;
+    }
+
+    .home-content h1 {
+        font-size: 3.9rem;
+    }
+
+    .home-content span {
+        font-size: 2.6rem;
+    }
+
+    .home {
+        margin: 4rem auto;
+    }
+
+    .home-content {
+        font-size: 3rem;
+        padding-left: 3rem;
+        margin-bottom: 3rem;
     }
 }
